@@ -390,7 +390,7 @@ export default async function({login, imports, data, q, account}, {enabled = fal
                   )
                 ).data.items.map(({name, genres, images}) => ({
                   name,
-                  artist: genres.join(" • "),
+                  artist: (genres ?? []).join(" • "),
                   artwork: images[0].url,
                 }))
                 : (
